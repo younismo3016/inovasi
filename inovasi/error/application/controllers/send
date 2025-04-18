@@ -1,0 +1,22 @@
+                                                $this->email->set_newline("\r\n");
+                                                $this->email->from('urusetia_inovasi@moha.gov.my', 'Inovasi');
+                                                $this->email->to($to_pemohon);
+                                                $this->email->subject('Makluman');
+                                                $this->email->message($data);
+                                                $this->email->set_mailtype("html");
+                                                if (!$this->email->send())//email tdk dpt dihantar
+                                                        //show_error($this->email->print_debugger());
+						$this->email->set_newline("\r\n");
+						$this->email->from('yunizar@moha.gov.my', 'SISPICT');
+						$this->email->to($email);
+						$this->email->subject(' Makluman Lewat ');
+						$this->email->message($data);
+						$this->email->set_mailtype("html");
+						if (!$this->email->send())//email tdk dpt dihantar
+							show_error($this->email->print_debugger());
+    	$this->email->set_newline("\r\n");
+        $this->email->from('yunizar@moha.gov.my', 'yunizar');
+        $this->email->to($userEmail);  // replace it with receiver mail id
+    $this->email->subject($subject); // replace it with relevant subject 
+    $this->email->message($body);   
+        $this->email->send();
